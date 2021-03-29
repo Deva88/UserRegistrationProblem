@@ -5,26 +5,28 @@ import java.util.regex.*;
 
 public class UserRegistration {
 	/**
-	 * * UC2-Validate Last name user need to enter a valid Last name Start with Cap
-	 * and has minimum 3 characters
+	 * * UC3-Validate Email user need to enter a valid Email ID valid or not.
+	 * 
 	 */
-	public static boolean lastName() {
+	public static boolean email() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Last Name: ");
-		String last = sc.next();
-		// Using REGEX
-		if (Pattern.matches("^[A-Z][aA-zZ]{2,}", last)) {
-			System.out.println("Last Name valid");
+		System.out.println("Enter email: ");
+		String email = sc.next();
+		if (Pattern.matches(
+				"[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9]+)*@\" + \"[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9]+){0,1}(\\\\.[A-Za-z]{2,})$",
+				email)) {
+
+			System.out.println("valid");
 			return true;
 		} else {
-			System.out.println("Last Name invalid");
-			return lastName();
+			System.out.println("invalid");
+			return email();
 		}
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to user registration");
-		lastName();
+		email();
 	}
 
 }
