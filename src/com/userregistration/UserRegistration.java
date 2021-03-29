@@ -12,9 +12,7 @@ public class UserRegistration {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter email: ");
 		String email = sc.next();
-		if (Pattern.matches(
-				"[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9]+)*@\" + \"[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9]+){0,1}(\\\\.[A-Za-z]{2,})$",
-				email)) {
+		if (Pattern.matches("[a-zA-Z0-9][a-zA-Z0-9_.]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+", email)) {
 
 			System.out.println("valid");
 			return true;
