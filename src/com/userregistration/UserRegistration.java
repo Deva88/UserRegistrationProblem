@@ -7,7 +7,7 @@ import java.util.regex.*;
 @description: class to checking Password  
 by regular expression
 @parameters: defining a method passwordCheck() to
-check Password Should have at least 1 Upper case using regular expression 
+check Password minimum 8 Character using regular expression 
  */
 public class UserRegistration {
 
